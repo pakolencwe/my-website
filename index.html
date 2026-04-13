@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pako Lencwe — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+  html, body { height: 100%; margin: 0; }
+  * { box-sizing: border-box; }
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+  .font-body { font-family: 'DM Sans', sans-serif; }
+  .page { display: none; }
+  .page.active { display: block; }
+  .nav-link { position: relative; cursor: pointer; transition: color 0.3s; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; transition: width 0.3s; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .cat-btn { transition: all 0.3s; }
+  .cat-btn.active { transform: translateY(-2px); }
+  .project-card { animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .skill-card { transition: transform 0.3s, box-shadow 0.3s; }
+  .skill-card:hover { transform: translateY(-6px); }
+  .hero-blob {
+    position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.15; pointer-events: none;
+  }
+  .avatar-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+  }
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body">
+  <div id="app" class="h-full w-full overflow-auto" style="background:#0a0a0f;">
+   <!-- Nav -->
+   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b" style="background:rgba(10,10,15,0.85); border-color:rgba(212,175,55,0.15);">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+     <span id="nav-name" class="font-display text-xl font-bold" style="color:#d4af37;">PL</span>
+     <div class="flex gap-8">
+      <span class="nav-link font-body text-sm tracking-wide active" data-page="home" style="color:#e8e8e8;">Home</span> <span class="nav-link font-body text-sm tracking-wide" data-page="about" style="color:#e8e8e8;">About</span> <span class="nav-link font-body text-sm tracking-wide" data-page="projects" style="color:#e8e8e8;">Projects</span>
+     </div>
+    </div>
+   </nav><!-- HOME -->
+   <section id="page-home" class="page active" style="min-height:100%;">
+    <div class="max-w-6xl mx-auto px-6 pt-32 pb-20 flex flex-col md:flex-row items-center gap-12" style="min-height:100%;">
+     <div class="flex-1 relative">
+      <div class="hero-blob" style="width:300px;height:300px;background:#d4af37;top:-40px;left:-60px;"></div>
+      <p class="text-sm font-body tracking-widest uppercase mb-4" style="color:#d4af37;">Welcome to my portfolio</p>
+      <h1 id="hero-name" class="font-display text-5xl md:text-7xl font-800 leading-tight mb-6" style="color:#f5f0e8;">Pako<br>
+        Lencwe</h1>
+      <p id="hero-title" class="text-xl md:text-2xl font-light mb-8" style="color:#a8a8b0;">Communications &amp; Marketing Officer</p><button onclick="navigateTo('projects')" class="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-semibold transition-all hover:scale-105" style="background:#d4af37;color:#0a0a0f;"> View My Work <i data-lucide="arrow-right" style="width:16px;height:16px;"></i> </button>
+     </div>
+     <div class="flex-shrink-0">
+      <img src="C:\Users\kenzi\Downloads\WhatsApp Image 2026-04-13 at 20.49.46 (1).jpeg" " alt="Pako Lencwe" loading="lazy" style="width:280px;height:340px;object-fit:cover;border-radius:16px;border:4px solid #d4af37;" onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#2a2a3e)'; this.alt='Photo unavailable';">
+     </div>
+    </div>
+   </section><!-- ABOUT -->
+   <section id="page-about" class="page" style="min-height:100%;">
+    <div class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+     <div class="flex flex-col md:flex-row gap-12 items-start">
+      <div class="flex-shrink-0"><img src="C:\Users\kenzi\Downloads\WhatsApp Image 2026-04-13 at 20.49.46 (1).jpeg" " alt="Pako Lencwe" loading="lazy" style="width:280px;height:340px;object-fit:cover;border-radius:16px;border:4px solid #d4af37;" onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#2a2a3e)'; this.alt='Photo unavailable';">
+      </div>
+      <div class="flex-1">
+       <p class="text-sm tracking-widest uppercase mb-3" style="color:#d4af37;">About Me</p>
+       <h2 class="font-display text-4xl font-bold mb-6" style="color:#f5f0e8;">Who I Am</h2>
+       <p id="about-text" class="text-lg leading-relaxed" style="color:#a8a8b0;">I am a Communications and Marketing Officer specializing in content creation, digital media, SEO, and brand management. I have experience managing social media, websites, and campaigns that improve visibility and engagement. I am seeking opportunities in communications, marketing, or digital roles where I can contribute to impactful and results-driven strategies.</p>
+       <div class="flex flex-wrap gap-3 mt-8">
+        <span class="px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(212,175,55,0.1);color:#d4af37;border:1px solid rgba(212,175,55,0.2);">Content Creation</span> <span class="px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(212,175,55,0.1);color:#d4af37;border:1px solid rgba(212,175,55,0.2);">Digital Media</span> <span class="px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(212,175,55,0.1);color:#d4af37;border:1px solid rgba(212,175,55,0.2);">SEO</span> <span class="px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(212,175,55,0.1);color:#d4af37;border:1px solid rgba(212,175,55,0.2);">Brand Management</span> <span class="px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(212,175,55,0.1);color:#d4af37;border:1px solid rgba(212,175,55,0.2);">Social Media</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- PROJECTS -->
+   <section id="page-projects" class="page" style="min-height:100%;">
+    <div class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+     <p class="text-sm tracking-widest uppercase mb-3" style="color:#d4af37;">My Work</p>
+     <h2 class="font-display text-4xl font-bold mb-4" style="color:#f5f0e8;">Projects &amp; Portfolio</h2>
+     <p id="welcome-text" class="text-lg mb-10" style="color:#a8a8b0;">Explore a selection of my work across communications, digital media, print design, and strategic planning.</p><!-- Skills -->
+     <div class="grid md:grid-cols-3 gap-6 mb-14">
+      <div class="skill-card rounded-xl p-6" style="background:#12121c;border:1px solid rgba(212,175,55,0.12);">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:rgba(212,175,55,0.1);">
+        <i data-lucide="megaphone" style="width:22px;height:22px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-display text-lg font-bold mb-3" style="color:#f5f0e8;">Internal &amp; External Communications</h3>
+       <p class="text-sm leading-relaxed" style="color:#888;">I develop strategies to promote services, manage stakeholder relationships, and ensure consistent messaging across all channels.</p>
+      </div>
+      <div class="skill-card rounded-xl p-6" style="background:#12121c;border:1px solid rgba(212,175,55,0.12);">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:rgba(212,175,55,0.1);">
+        <i data-lucide="monitor-smartphone" style="width:22px;height:22px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-display text-lg font-bold mb-3" style="color:#f5f0e8;">Digital &amp; Social Media Management</h3>
+       <p class="text-sm leading-relaxed" style="color:#888;">I implement social media policies, create engaging content, and maintain online presence to boost brand awareness.</p>
+      </div>
+      <div class="skill-card rounded-xl p-6" style="background:#12121c;border:1px solid rgba(212,175,55,0.12);">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:rgba(212,175,55,0.1);">
+        <i data-lucide="palette" style="width:22px;height:22px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-display text-lg font-bold mb-3" style="color:#f5f0e8;">Brand &amp; Event Management</h3>
+       <p class="text-sm leading-relaxed" style="color:#888;">I plan events, design marketing materials, and maintain brand identity to promote expertise and services.</p>
+      </div>
+     </div><!-- Category Filter -->
+     <div class="flex flex-wrap gap-3 mb-10">
+      <button class="cat-btn active px-6 py-2.5 rounded-full text-sm font-semibold" style="background:#d4af37;color:#0a0a0f;" data-cat="all">All</button> <button class="cat-btn px-6 py-2.5 rounded-full text-sm font-medium" style="background:#1a1a2e;color:#a8a8b0;border:1px solid rgba(212,175,55,0.2);" data-cat="print">Print Materials</button> <button class="cat-btn px-6 py-2.5 rounded-full text-sm font-medium" style="background:#1a1a2e;color:#a8a8b0;border:1px solid rgba(212,175,55,0.2);" data-cat="digital">Digital Media</button> <button class="cat-btn px-6 py-2.5 rounded-full text-sm font-medium" style="background:#1a1a2e;color:#a8a8b0;border:1px solid rgba(212,175,55,0.2);" data-cat="pr">PR &amp; Articles</button> <button class="cat-btn px-6 py-2.5 rounded-full text-sm font-medium" style="background:#1a1a2e;color:#a8a8b0;border:1px solid rgba(212,175,55,0.2);" data-cat="strategy">Strategies &amp; Policies</button>
+     </div><!-- Project Grid -->
+     <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+   </section><!-- FOOTER -->
+   <footer class="border-t" style="background:#12121c;border-color:rgba(212,175,55,0.15);">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+     <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+       <p class="text-xs tracking-widest uppercase mb-3" style="color:#d4af37;">Get in Touch</p><a href="tel:+27814682598" class="flex items-center gap-2 mb-3 hover:opacity-80 transition" style="color:#a8a8b0;"> <i data-lucide="phone" style="width:16px;height:16px;"></i> <span class="text-sm">081 468 2598</span> </a> <a href="mailto:pakolencwe@gmail.com" class="flex items-center gap-2 hover:opacity-80 transition" style="color:#a8a8b0;"> <i data-lucide="mail" style="width:16px;height:16px;"></i> <span class="text-sm">pakolencwe@gmail.com</span> </a>
+      </div>
+      <div>
+       <p class="text-xs tracking-widest uppercase mb-3" style="color:#d4af37;">Navigation</p>
+       <p class="text-sm cursor-pointer hover:opacity-80 transition mb-2" onclick="navigateTo('home')" style="color:#a8a8b0;">Home</p>
+       <p class="text-sm cursor-pointer hover:opacity-80 transition mb-2" onclick="navigateTo('about')" style="color:#a8a8b0;">About</p>
+       <p class="text-sm cursor-pointer hover:opacity-80 transition" onclick="navigateTo('projects')" style="color:#a8a8b0;">Projects</p>
+      </div>
+      <div>
+       <p class="text-xs tracking-widest uppercase mb-3" style="color:#d4af37;">About</p>
+       <p class="text-sm leading-relaxed" style="color:#a8a8b0;">Communications &amp; Marketing Officer specializing in digital media, content creation, and brand management.</p>
+      </div>
+     </div>
+     <div class="border-t pt-6" style="border-color:rgba(212,175,55,0.1);">
+      <p class="text-xs text-center" style="color:#666;">© 2024 Pako Lencwe. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+const projects = [
+  { title: "Hospital Newsletter", cat: "print", icon: "newspaper", desc: "Monthly internal newsletter design and content curation for staff engagement." },
+  { title: "Service Brochures", cat: "print", icon: "book-open", desc: "Informational brochures highlighting key services and patient programmes." },
+  { title: "Event Posters & Flyers", cat: "print", icon: "image", desc: "Eye-catching print materials for hospital events, health drives, and campaigns." },
+  { title: "Social Media Campaigns", cat: "digital", icon: "share-2", desc: "Strategic social media content driving awareness, engagement, and community growth." },
+  { title: "Website Content Management", cat: "digital", icon: "globe", desc: "Ongoing website updates, SEO optimisation, and content strategy execution." },
+  { title: "Video & Multimedia", cat: "digital", icon: "video", desc: "Short-form video production for social platforms and internal communications." },
+  { title: "Press Releases", cat: "pr", icon: "file-text", desc: "Drafting and distributing press releases for key organisational milestones." },
+  { title: "Media Articles", cat: "pr", icon: "pen-tool", desc: "Feature articles published in local and industry media outlets." },
+  { title: "Stakeholder Reports", cat: "pr", icon: "bar-chart-2", desc: "Communication reports for stakeholders highlighting impact and reach." },
+  { title: "Communications Strategy", cat: "strategy", icon: "target", desc: "Comprehensive communications strategy aligned with organisational goals." },
+  { title: "Social Media Policy", cat: "strategy", icon: "shield", desc: "Development and implementation of social media usage policies and guidelines." },
+  { title: "Brand Guidelines", cat: "strategy", icon: "layout", desc: "Brand identity standards ensuring visual and tonal consistency across all touchpoints." },
+];
+
+const defaultConfig = {
+  hero_name: "Pako Lencwe",
+  hero_title: "Communications & Marketing Officer",
+  about_text: "I am a Communications and Marketing Officer specializing in content creation, digital media, SEO, and brand management. I have experience managing social media, websites, and campaigns that improve visibility and engagement. I am seeking opportunities in communications, marketing, or digital roles where I can contribute to impactful and results-driven strategies.",
+  welcome_text: "Explore a selection of my work across communications, digital media, print design, and strategic planning.",
+  background_color: "#0a0a0f",
+  accent_color: "#d4af37",
+  text_color: "#f5f0e8",
+  surface_color: "#12121c",
+  muted_color: "#a8a8b0",
+  font_family: "Playfair Display",
+  font_size: 16
+};
+
+// Navigation
+function navigateTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(n => {
+    n.classList.toggle('active', n.dataset.page === page);
+  });
+  document.getElementById('app').scrollTop = 0;
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => navigateTo(link.dataset.page));
+});
+
+// Category filter
+let currentCat = 'all';
+function renderProjects(cat) {
+  currentCat = cat;
+  const grid = document.getElementById('project-grid');
+  const filtered = cat === 'all' ? projects : projects.filter(p => p.cat === cat);
+  grid.innerHTML = '';
+  const cfg = window.elementSdk?.config || defaultConfig;
+  filtered.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'project-card rounded-xl p-6';
+    card.style.cssText = `background:${cfg.surface_color || defaultConfig.surface_color};border:1px solid rgba(212,175,55,0.1);animation-delay:${i*0.06}s;`;
+    card.innerHTML = `
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:rgba(212,175,55,0.1);">
+        <i data-lucide="${p.icon}" style="width:20px;height:20px;color:${cfg.accent_color || defaultConfig.accent_color};"></i>
+      </div>
+      <span class="text-xs font-medium uppercase tracking-wider" style="color:${cfg.accent_color || defaultConfig.accent_color};">${p.cat === 'print' ? 'Print Materials' : p.cat === 'digital' ? 'Digital Media' : p.cat === 'pr' ? 'PR & Articles' : 'Strategies & Policies'}</span>
+      <h3 class="font-display text-lg font-bold mt-2 mb-2" style="color:${cfg.text_color || defaultConfig.text_color};">${p.title}</h3>
+      <p class="text-sm leading-relaxed" style="color:#888;">${p.desc}</p>
+    `;
+    grid.appendChild(card);
+  });
+  lucide.createIcons();
+
+  // Update button styles
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    const isActive = btn.dataset.cat === cat;
+    btn.classList.toggle('active', isActive);
+    if (isActive) {
+      btn.style.background = cfg.accent_color || defaultConfig.accent_color;
+      btn.style.color = cfg.background_color || defaultConfig.background_color;
+      btn.style.border = 'none';
+    } else {
+      btn.style.background = cfg.surface_color || defaultConfig.surface_color;
+      btn.style.color = cfg.muted_color || defaultConfig.muted_color;
+      btn.style.border = '1px solid rgba(212,175,55,0.2)';
+    }
+  });
+}
+
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => renderProjects(btn.dataset.cat));
+});
+
+// Element SDK
+function applyConfig(config) {
+  const c = { ...defaultConfig, ...config };
+  const fontStack = `${c.font_family}, Georgia, serif`;
+  const bodyStack = `DM Sans, sans-serif`;
+  const base = c.font_size;
+
+  // Text content
+  const heroNameParts = (c.hero_name || defaultConfig.hero_name).split(' ');
+  document.getElementById('hero-name').innerHTML = heroNameParts.join('<br>');
+  document.getElementById('hero-title').textContent = c.hero_title || defaultConfig.hero_title;
+  document.getElementById('about-text').textContent = c.about_text || defaultConfig.about_text;
+  document.getElementById('welcome-text').textContent = c.welcome_text || defaultConfig.welcome_text;
+
+  // Colors
+  document.getElementById('app').style.background = c.background_color;
+  document.querySelectorAll('.font-display').forEach(el => {
+    el.style.fontFamily = fontStack;
+    el.style.color = c.text_color;
+  });
+
+  // Nav
+  const nav = document.getElementById('main-nav');
+  nav.style.background = `rgba(${hexToRgb(c.background_color)},0.85)`;
+  nav.style.borderColor = `rgba(${hexToRgb(c.accent_color)},0.15)`;
+  document.getElementById('nav-name').style.color = c.accent_color;
+
+  // Accent elements
+  document.querySelectorAll('[style*="color:#d4af37"], [style*="color: #d4af37"]').forEach(el => {
+    if (el.style.color) el.style.color = c.accent_color;
+  });
+
+  // Muted text
+  document.getElementById('hero-title').style.color = c.muted_color;
+  document.getElementById('about-text').style.color = c.muted_color;
+  document.getElementById('welcome-text').style.color = c.muted_color;
+
+  // Font sizing
+  document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${base * 3.5}px`);
+  document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${base * 2.25}px`);
+  document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${base * 1.125}px`);
+  document.querySelectorAll('.text-lg').forEach(el => el.style.fontSize = `${base * 1.125}px`);
+  document.querySelectorAll('.text-sm').forEach(el => el.style.fontSize = `${base * 0.875}px`);
+
+  // Skill cards
+  document.querySelectorAll('.skill-card').forEach(card => {
+    card.style.background = c.surface_color;
+    card.style.borderColor = `rgba(${hexToRgb(c.accent_color)},0.12)`;
+  });
+
+  // Re-render projects with new colors
+  renderProjects(currentCat);
+}
+
+function hexToRgb(hex) {
+  const h = hex.replace('#','');
+  return [parseInt(h.substring(0,2),16), parseInt(h.substring(2,4),16), parseInt(h.substring(4,6),16)].join(',');
+}
+
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange: async (config) => applyConfig(config),
+  mapToCapabilities: (config) => ({
+    recolorables: [
+      { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+      { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+      { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+      { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+      { get: () => config.muted_color || defaultConfig.muted_color, set: (v) => { config.muted_color = v; window.elementSdk.setConfig({ muted_color: v }); } },
+    ],
+    borderables: [],
+    fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+    fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } },
+  }),
+  mapToEditPanelValues: (config) => new Map([
+    ["hero_name", config.hero_name || defaultConfig.hero_name],
+    ["hero_title", config.hero_title || defaultConfig.hero_title],
+    ["about_text", config.about_text || defaultConfig.about_text],
+    ["welcome_text", config.welcome_text || defaultConfig.welcome_text],
+  ])
+});
+
+renderProjects('all');
+lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebcaa97638b73dc',t:'MTc3NjEwNjMzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
