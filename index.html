@@ -1,25 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pako Lencwe</title>
+<title>Pako Lencwe — My Work</title>
 
-<link rel="stylesheet" href="styles.css">
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+html,body{height:100%;margin:0}
+*{box-sizing:border-box}
+
+body{
+background:#0a0a0f;
+font-family:'DM Sans',sans-serif;
+}
+
+.font-display{
+font-family:'Playfair Display',serif;
+}
+
+.project-card{
+transition:0.35s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 35px rgba(0,0,0,0.35);
+}
+
+.nav-link{
+position:relative;
+transition:0.3s;
+}
+
+.nav-link:after{
+content:'';
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:#d4af37;
+transition:0.3s;
+}
+
+.nav-link:hover:after,
+.nav-link.active:after{
+width:100%;
+}
+</style>
 </head>
 
-<body>
+<body class="h-full">
 
-<nav class="navbar">
-<div class="container nav-flex">
-<h1 class="logo">PL</h1>
+<div class="min-h-full">
 
-<div class="nav-links">
-<a href="index.html">Home</a>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b"
+style="background:rgba(10,10,15,0.88);border-color:rgba(212,175,55,0.15);">
+
+<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<a href="index.html" class="font-display text-xl font-bold"
+style="color:#d4af37;">
+PL
+</a>
+
+<div class="flex gap-8">
+<a href="index.html" class="nav-link text-sm text-white">Home</a>
 <a href="about.html" class="nav-link active text-sm text-white">About</a>
-<a href="work.html">Projects</a>
+<a href="work.html" class="nav-link active text-sm text-white">Projects</a>
+</div>
+
 </div>
 </nav>
 
